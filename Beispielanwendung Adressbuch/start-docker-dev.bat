@@ -15,3 +15,9 @@ echo "Bei Fehlern in der Anwendung bitte hier die Log-Ausgaben prüfen. 😊"
 pause
 
 docker-compose -f docker-compose.dev.yml up
+
+
+
+
+
+
