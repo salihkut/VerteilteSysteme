@@ -25,6 +25,7 @@ export default class PageEdit extends Page {
             last_name: "",
             phone: "",
             email: "",
+            golf: "",
         };
 
         // Eingabefelder
@@ -32,6 +33,7 @@ export default class PageEdit extends Page {
         this._lastNameInput  = null;
         this._phoneInput     = null;
         this._emailInput     = null;
+        this._golfInput     = null;
     }
 
     /**
@@ -69,6 +71,7 @@ export default class PageEdit extends Page {
         html = html.replace("$FIRST_NAME$", this._dataset.first_name);
         html = html.replace("$PHONE$", this._dataset.phone);
         html = html.replace("$EMAIL$", this._dataset.email);
+        html = html.replace("$GOLF$", this._dataset.golf);
         this._mainElement.innerHTML = html;
 
         // Event Listener registrieren
@@ -80,6 +83,7 @@ export default class PageEdit extends Page {
         this._lastNameInput  = this._mainElement.querySelector("input.last_name");
         this._phoneInput     = this._mainElement.querySelector("input.phone");
         this._emailInput     = this._mainElement.querySelector("input.email");
+        this._golfInput     = this._mainElement.querySelector("input.golf");
     }
 
     /**
@@ -93,6 +97,7 @@ export default class PageEdit extends Page {
         this._dataset.last_name  = this._lastNameInput.value.trim();
         this._dataset.phone      = this._phoneInput.value.trim();
         this._dataset.email      = this._emailInput.value.trim();
+        this._dataset.golf      = this._golfInput.value.trim();
 
         if (!this._dataset.first_name) {
             alert("Geben Sie erst einen Vornamen ein.");
